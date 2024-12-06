@@ -1,0 +1,19 @@
+import random
+number_to_guess = random.randint(1, 20)
+
+for total_guesses in range(5):
+    guess = int(input("Enter your guessing number:"))
+    if guess < number_to_guess:
+        print("Your guess is below the number, try another guess.")
+    elif guess > number_to_guess:
+        print("Your guess is above the number, try another guess.")
+    else:
+        break
+
+if guess == number_to_guess:
+    total_guesses = str(total_guesses + 1)
+    print(f"HEY! It took you {total_guesses} attempts to guess the number.")
+
+if guess != number_to_guess:
+    number_to_guess = str(number_to_guess)
+    print(f"Nope, the number I was thinking was {number_to_guess}.")
